@@ -52,6 +52,8 @@ public class Operadores {
 
         variavel = !variavel; //agora muda o valor da variavel 
         System.out.println(variavel);
+
+        
     }
     
 }
