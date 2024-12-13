@@ -3,13 +3,13 @@ public class SmartTV {
     int canal = 1;
     int volume = 10;
 
-    public void mudarCanal (int novoCanal){
+    public void mudarCanal (int novoCanal){ //usuario defini o canal que deseja
         canal = novoCanal;
     }
-    public void aumentarCanal(){
+    public void aumentarCanal(){ // muda de canal 1 a 1 ordem crescente
         canal++;
     }
-    public void diminuirCanal(){
+    public void diminuirCanal(){ // muda de canal 1 a 1 ordem decrescente 
         canal--;
     }
 
