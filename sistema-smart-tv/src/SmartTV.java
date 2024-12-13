@@ -1,7 +1,7 @@
 public class SmartTV {
-    boolean ligada = false;
-    int canal = 1;
-    int volume = 10;
+    boolean ligada = false; // caracteristica à nível da classe SmartTv
+    int canal = 1; // caracteristica à nível da classe SmartTv
+    int volume = 10; // caracteristica à nível da classe SmartTv
 
     public void mudarCanal (int novoCanal){ //usuario defini o canal que deseja
         canal = novoCanal;
