@@ -4,7 +4,13 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        
+        {
+            "type": "java",
+            "name": "AboutMeScanner",
+            "request": "launch",
+            "mainClass": "AboutMeScanner",
+            "projectName": "Java-Terminal_433f5407"
+        },
         {
             "type": "java",
             "name": "Current File",
@@ -16,7 +22,7 @@
             "name": "AboutMe",
             "request": "launch",
             "mainClass": "AboutMe",
-            "args":[
+            "args": [
                 "Ivan",
                 "Souza Silva",
                 "34",
