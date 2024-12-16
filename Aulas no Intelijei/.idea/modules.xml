@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Aulas no Intelijei.iml" filepath="$PROJECT_DIR$/Aulas no Intelijei.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Operadores Logicos/Operadores Logicos.iml" filepath="$PROJECT_DIR$/Operadores Logicos/Operadores Logicos.iml" />
+    </modules>
+  </component>
+</project>
