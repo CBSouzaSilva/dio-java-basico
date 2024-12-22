@@ -24,7 +24,7 @@ public class TiposVariaveis {
         //classe String que representa texto na aplicação
         //ex
 
-        String meuNome = "Ivan Marcele";
+        String meuNome = "Ivan MSS";
 
     }
 
