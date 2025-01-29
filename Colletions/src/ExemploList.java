@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.stream.Collectors;
 
 import static java.util.Collection.*;
 
@@ -111,10 +112,12 @@ public class ExemploList {
 
         LinkedList<Double> nota2 = new LinkedList<>();
         nota2.addAll(nota);
+        //LinkedList<Double> nota2 = nota.stream().collect(Collectors.toCollection(LinkedList::new));
         System.out.println(nota2);
 
-        //System.out.println("Mostre a Primeira nota da nova lista sem removê-la: "+nota2.getFirst());
-        //System.out.println("Mostre a primeira nota da nova lista removendo-a: " +nota2.);
+        System.out.println("Mostre a Primeira nota da nova lista sem removê-la: "+nota2.getFirst());
+        System.out.println("Mostre a primeira nota da nova lista removendo-a: " + nota2.pollFirst());
+        System.out.println(nota2);
 
 
 
