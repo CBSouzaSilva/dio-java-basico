@@ -7,8 +7,7 @@ Autor = Duhigg, Charles - Livro = nome: O poder do Hábito, páginas: 408
 Autor = Harari, Yuval Noah - Livro = 21 Lições Para o Século 21, páginas: 432
  */
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class ExemploOrdenacaoMap {
     public static void main(String[] args) {
@@ -18,13 +17,39 @@ public class ExemploOrdenacaoMap {
             put("Duhigg, Charles", new Livro("O poder do Hábito, páginas", 408));
             put("Harari, Yuval Noah", new Livro("21 Lições Para o Século 21", 432));
         }};
-        System.out.println(meusLivros.toString());
+        for(Map.Entry<String, Livro> livro :meusLivros.entrySet())
+            System.out.println(livro.getKey() + " - " + livro.getValue().getNome());
+
+        System.out.println("Ordem Inserção");
+        Map<String, Livro> meuslivros1 = new LinkedHashMap<>(){{
+            put("Hawking, Stephen", new Livro("Uma Breve História do tempo", 256));
+            put("Duhigg, Charles", new Livro("O poder do Hábito, páginas", 408));
+            put("Harari, Yuval Noah", new Livro("21 Lições Para o Século 21", 432));
+        }};
+        for(Map.Entry<String, Livro> livro : meuslivros1.entrySet())
+            System.out.println(livro.getKey() + " - "+ livro.getValue().getNome());
+
+        System.out.println("Ordem alfabética autores");
+        Map<String, Livro> meusLivros2 = new TreeMap<>(meuslivros1);
+        for (Map.Entry<String, Livro> livro : meusLivros2.entrySet())
+            System.out.println(livro.getKey() + " - "+ livro.getValue().getNome());
+
+        System.out.println("Ordem alfabética nomes dos livros");
+        Set<Map.Entry<String, Livro>> meusLivros3 = new TreeSet<>(new ComparatorNome());
+        meusLivros3.addAll(meusLivros.entrySet());
+        for (Map.Entry<String, Livro> livro : meusLivros3)
+            System.out.println(livro.getKey() + " - "+ livro.getValue().getNome());
+
+        System.out.println("Ordem número de páginas");
+        Map<String, Livro> meusLivros4 = new HashMap<>(meusLivros);
+        List<Map.Entry<String, Livro>> lista = new ArrayList<>(meusLivros4.entrySet());
+        Collections.sort(lista,((o1, o2) -> Integer.compare(o1.getValue().getPaginas(), o2.getValue().getPaginas())));
+
+        for (Map.Entry<String, Livro> livro : lista) {
+            System.out.println(livro.getKey() + " - " + livro.getValue().getNome() + ": " + livro.getValue().getPaginas()+ " páginas");
+        }
 
 
-        //System.out.println("Ordem Inserção");
-        //System.out.println("Ordem alfabética autores");
-        //System.out.println("Ordem alfabética nomes dos livros");
-        //System.out.println("Ordem número de páginas");
     }
 
 }
@@ -68,5 +93,12 @@ class Livro{
                 "nome='" + nome + '\'' +
                 ", paginas=" + paginas +
                 '}';
+    }
+}
+class ComparatorNome implements Comparator<Map.Entry<String, Livro>>{
+
+    @Override
+    public int compare(Map.Entry<String, Livro> l1, Map.Entry<String, Livro> l2) {
+        return l1.getValue().getNome().compareToIgnoreCase(l2.getValue().getNome());
     }
 }
