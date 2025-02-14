@@ -43,7 +43,7 @@ public class ExemploOrdenacaoMap {
         System.out.println("Ordem número de páginas");
         Map<String, Livro> meusLivros4 = new HashMap<>(meusLivros);
         List<Map.Entry<String, Livro>> lista = new ArrayList<>(meusLivros4.entrySet());
-        Collections.sort(lista,((o1, o2) -> Integer.compare(o1.getValue().getPaginas(), o2.getValue().getPaginas())));
+        Collections.sort(lista,((l1, l2) -> Integer.compare(l1.getValue().getPaginas(), l2.getValue().getPaginas())));
 
         for (Map.Entry<String, Livro> livro : lista) {
             System.out.println(livro.getKey() + " - " + livro.getValue().getNome() + ": " + livro.getValue().getPaginas()+ " páginas");
